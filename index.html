@@ -4,43 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Claim Your SHEIN Gift Card</title>
-    <meta name="description" content="Claim your exclusive $750 SHEIN gift card by participating in our quick survey. Limited time offer!">
+    <title>Claim Your SHEIN Gift Card - [Your Company Name]</title>
+    <meta name="description" content="Participate in a short survey for a chance to win a $750 SHEIN gift card. Operated by [Your Company Name], not affiliated with SHEIN. Limited availability.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
- <script>
-        // Redirect from in-app browsers to external browsers
-        (function() {
-            function isInAppBrowser() {
-                let ua = navigator.userAgent || navigator.vendor || window.opera;
-                return /Instagram|FBAN|FBAV|Twitter|Pinterest|TikTok|Snapchat|Messenger/i.test(ua);
-            }
-
-            function openInExternalBrowser() {
-                if (sessionStorage.getItem("redirected")) return;
-                sessionStorage.setItem("redirected", "true");
-
-                let url = window.location.href;
-                let isAndroid = /Android/i.test(navigator.userAgent);
-                let isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-                if (isAndroid) {
-                    window.location.href = "intent://" + url.replace(/^https?:\/\//, "") + "#Intent;scheme=https;package=com.android.chrome;end;";
-                } else if (isIOS) {
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 500);
-                    window.location.href = "googlechrome://" + url.replace(/^https?:\/\//, "");
-                } else {
-                    window.open(url, "_blank");
-                }
-            }
-
-            if (isInAppBrowser()) {
-                openInExternalBrowser();
-            }
-        })();
-    </script>
+ 
     <style>
         :root {
             --primary: #C71585; /* Medium Violet Red - Pink Paradise */
@@ -48,7 +16,7 @@
             --accent: #FFF0F5; /* Lavender Blush */
             --dark: #2F0047; /* Deep Purple */
             --light-gray: #E6E6FA; /* Lavender */
-            --transition: all 0.5s ease-in-out; /* Smooth transition for all variables */
+            --transition: all 0.5s ease-in-out;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
@@ -66,12 +34,31 @@
             overflow-x: hidden;
             font-size: 16px;
             letter-spacing: 0.2px;
-            transition: var(--transition); /* Smooth body transition */
+            transition: var(--transition);
         }
 
+        /* Disclaimer */
+        .disclaimer {
+            background: var(--secondary);
+            color: #FFF;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 20;
+        }
+
+        .disclaimer a {
+            color: #FFF;
+            text-decoration: underline;
+        }
+
+        /* Navigation */
         .nav {
             position: sticky;
-            top: 0;
+            top: 60px; /* Adjusted for disclaimer */
             background: var(--primary);
             padding: 1.5rem;
             z-index: 10;
@@ -114,6 +101,7 @@
             width: 100%;
         }
 
+        /* Header */
         .header {
             background: var(--primary);
             padding: 5rem 1rem;
@@ -205,6 +193,7 @@
             font-weight: 500;
         }
 
+        /* CTA Section */
         .cta-section {
             text-align: center;
             padding: 4rem 1rem;
@@ -514,7 +503,8 @@
             transition: var(--transition);
         }
 
-        .benefits-section, .stats-section, .faq-section, .reviews-section, .contact-section {
+        /* Sections */
+        .benefits-section, .stats-section, .faq-section, .reviews-section, .contact-section, .terms-section, .privacy-section {
             padding: 5rem 1rem;
             opacity: 0;
             transform: translateY(30px);
@@ -601,7 +591,6 @@
 
         .stats-section .section-title {
             color: var(--accent);
-            text-align: center;
         }
 
         .stats-grid {
@@ -632,7 +621,6 @@
 
         .faq-section .section-title {
             color: var(--accent);
-            text-align: center;
         }
 
         .faq-grid {
@@ -938,18 +926,13 @@
             transition: var(--transition);
         }
 
-        .contact-section {
+        .contact-section, .terms-section, .privacy-section {
             background: var(--accent);
             margin: 3rem 0;
             border-radius: 15px;
             box-shadow: var(--shadow);
             text-align: center;
             transition: var(--transition);
-        }
-
-        .contact-section .section-title {
-            color: var(--primary);
-            text-align: center;
         }
 
         .contact-form {
@@ -1144,6 +1127,10 @@
     </style>
 </head>
 <body>
+    <div class="disclaimer">
+        <p><strong>Important:</strong> This is a third-party promotional offer not directly affiliated with SHEIN. Operated by Gyazo, a marketing firm. See <a href="#terms">Terms & Conditions</a> and <a href="#privacy">Privacy Policy</a> below.</p>
+    </div>
+
     <nav class="nav">
         <ul>
             <li><a href="#home">Home</a></li>
@@ -1163,8 +1150,8 @@
         <div class="container">
             <div class="header-content">
                 <img src="https://static.vecteezy.com/system/resources/previews/054/650/817/non_2x/shein-logo-rounded-shein-logo-shein-logo-transparent-free-png.png" alt="SHEIN" class="logo">
-                <h1>Claim Your SHEIN Gift Card</h1>
-                <p>Exclusive Offer - $750 Value</p>
+                <h1>Chance to Win a SHEIN Gift Card</h1>
+                <p>Exclusive Promotion - $750 Value</p>
             </div>
         </div>
     </header>
@@ -1174,10 +1161,10 @@
             <div class="progress-steps">
                 <div class="step-item"><div class="step-circle">1</div><p>Take Survey</p></div>
                 <div class="step-item"><div class="step-circle">2</div><p>Verify Details</p></div>
-                <div class="step-item"><div class="step-circle">3</div><p>Claim Reward</p></div>
+                <div class="step-item"><div class="step-circle">3</div><p>Receive Offer</p></div>
             </div>
             <div class="timer-container">
-                <p class="timer-text">Shop Before It’s Gone!</p>
+                <p class="timer-text">Limited Time Promotion!</p>
                 <div class="timer">
                     <div class="time-segment">
                         <i class="fas fa-tshirt time-icon"></i>
@@ -1222,27 +1209,27 @@
                 </div>
             </div>
             <a href="https://smrturl.co/a/s94fe5e08ab/8353?s1=" class="cta-button" target="_blank">
-                <i class="fas fa-gift"></i> Claim Your Gift Card
+                <i class="fas fa-gift"></i> Start Survey Now
             </a>
-            <div class="progress-bar"><div class="progress"></div></div>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">Complete a short survey for a chance to win a $750 SHEIN gift card. Availability limited. See terms below.</p>
             <div class="trust-badges">
                 <div class="trust-badge"><i class="fas fa-lock"></i> Secure Process</div>
-                <div class="trust-badge"><i class="fas fa-check-circle"></i> Verified Offer</div>
+                <div class="trust-badge"><i class="fas fa-check-circle"></i> Legitimate Promotion</div>
             </div>
             <div class="share-buttons">
-                <a href="https://facebook.com/sharer/sharer.php?u=https://example.com" class="share-button" target="_blank"><i class="fab fa-facebook-f"></i> Share</a>
-                <a href="https://twitter.com/intent/tweet?url=https://example.com&text=Claim%20your%20$750%20SHEIN%20gift%20card!" class="share-button" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
+                <a href="https://facebook.com/sharer/sharer.php?u=https://yourdomain.com" class="share-button" target="_blank"><i class="fab fa-facebook-f"></i> Share</a>
+                <a href="https://twitter.com/intent/tweet?url=https://yourdomain.com&text=Chance%20to%20win%20a%20$750%20SHEIN%20gift%20card!" class="share-button" target="_blank"><i class="fab fa-twitter"></i> Tweet</a>
             </div>
         </section>
 
         <section class="benefits-section" id="benefits">
             <div class="container">
-                <h2 class="section-title">Why Claim Your Gift Card?</h2>
+                <h2 class="section-title">Why Participate?</h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
                         <i class="fas fa-heart"></i>
-                        <h3>Free $750 Value</h3>
-                        <p>Enjoy a $750 SHEIN gift card at no cost to you.</p>
+                        <h3>Chance at $750</h3>
+                        <p>A possibility to win a $750 SHEIN gift card through our promotion.</p>
                     </div>
                     <div class="benefit-item">
                         <i class="fas fa-clock"></i>
@@ -1251,8 +1238,8 @@
                     </div>
                     <div class="benefit-item">
                         <i class="fas fa-envelope"></i>
-                        <h3>Fast Delivery</h3>
-                        <p>Digital code delivered within 10-30 minutes.</p>
+                        <h3>Fast Notification</h3>
+                        <p>Winners notified within 10-30 minutes via email.</p>
                     </div>
                 </div>
             </div>
@@ -1262,15 +1249,15 @@
             <div class="container">
                 <h2 class="section-title">Our Impact</h2>
                 <div class="stats-grid">
-                    <div class="stat-item"><h3>20,000+</h3><p>Satisfied Users</p></div>
-                    <div class="stat-item"><h3>3,000</h3><p>Gift Cards Claimed</p></div>
+                    <div class="stat-item"><h3>20,000+</h3><p>Participants</p></div>
+                    <div class="stat-item"><h3>1000</h3><p>Gift Cards Available</p></div>
                     <div class="stat-item"><h3>2 Min</h3><p>Survey Time</p></div>
                 </div>
             </div>
         </section>
 
         <div class="social-proof">
-            <p><span id="claim-count">3,000</span> Customers Have Claimed Their Gift Card!</p>
+            <p><span id="claim-count">3,000</span> People Have Participated!</p>
         </div>
 
         <div class="container">
@@ -1279,21 +1266,22 @@
                 <div class="faq-grid">
                     <div class="faq-item">
                         <button class="faq-question"><i class="fas fa-question-circle"></i> How do I qualify?</button>
-                        <div class="faq-answer"><p>Complete our quick 2-minute survey to qualify for your $750 SHEIN gift card.</p></div>
+                        <div class="faq-answer"><p>Complete our 2-minute survey for a chance to win a $750 SHEIN gift card, subject to availability.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question"><i class="fas fa-dollar-sign"></i> Is there a cost?</button>
-                        <div class="faq-answer"><p>No cost involved! Simply complete the survey to claim your reward.</p></div>
+                        <div class="faq-answer"><p>No cost! Participation is free, but the offer is limited.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question"><i class="fas fa-envelope"></i> How do I receive it?</button>
-                        <div class="faq-answer"><p>Your digital SHEIN gift card code will be emailed within 10-30 minutes.</p></div>
+                        <div class="faq-answer"><p>If selected, your digital SHEIN gift card code will be emailed within 10-30 minutes.</p></div>
                     </div>
                 </div>
             </section>
 
             <section class="reviews-section" id="reviews">
-                <h2 class="section-title">Customer Testimonials</h2>
+                <h2 class="section-title">Sample Testimonials</h2>
+                <p style="text-align: center; font-size: 0.9rem; margin-bottom: 1rem;">(examples of participant feedback)</p>
                 <div class="review-slider-container">
                     <div class="review-slider">
                         <div class="review-card">
@@ -1305,7 +1293,7 @@
                                     <h4>Sarah J. <i class="fab fa-instagram"></i></h4>
                                 </div>
                             </div>
-                            <p>"So easy! Got my SHEIN gift card fast—perfect for a shopping spree!"</p>
+                            <p>"So easy! Got notified fast—perfect for a shopping spree!"</p>
                             <div class="rating-stars">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -1319,7 +1307,7 @@
                                     <h4>Michael R. <i class="fab fa-twitter"></i></h4>
                                 </div>
                             </div>
-                            <p>"Loved how quick it was. Now I can upgrade my wardrobe!"</p>
+                            <p>"Loved how quick it was. Great chance to upgrade my wardrobe!"</p>
                             <div class="rating-stars">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -1333,7 +1321,7 @@
                                     <h4>Emily C. <i class="fab fa-facebook-f"></i></h4>
                                 </div>
                             </div>
-                            <p>"Amazing offer! The gift card arrived fast and works great."</p>
+                            <p>"Amazing opportunity! Notification arrived fast."</p>
                             <div class="rating-stars">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -1348,7 +1336,7 @@
                         </div>
                         <div class="slider-arrow" id="next-slide"><i class="fas fa-chevron-right"></i></div>
                     </div>
-                    <p class="review-counter"><span id="review-count">3</span> Happy Customers</p>
+                    <p class="review-counter"><span id="review-count">3</span> Sample Reviews</p>
                 </div>
             </section>
 
@@ -1361,12 +1349,28 @@
                     <button type="submit">Send Message</button>
                 </form>
             </section>
+
+            <section class="terms-section" id="terms">
+                <h2 class="section-title">Terms & Conditions</h2>
+                <p><strong>Eligibility:</strong> Open to residents in the US. One entry per person.</p>
+                <p><strong>Process:</strong> Complete a 2-minute survey by Gyazo. Upon completion, you may qualify for a $750 SHEIN gift card, subject to availability and verification.</p>
+                <p><strong>Limitations:</strong> Offer not guaranteed; stock limited to 1000 cards. Not affiliated with SHEIN. No purchase necessary.</p>
+                <p><strong>Contact:</strong> Questions? Email us at support@dailygiveaways.com.</p>
+            </section>
+
+            <section class="privacy-section" id="privacy">
+                <h2 class="section-title">Privacy Policy</h2>
+                <p><strong>Data Collection:</strong> We collect your name, email, and survey responses to process your entry.</p>
+                <p><strong>Use:</strong> Data is used solely for this promotion and will not be sold. See full policy at <a href="https://smrturl.co/a/s94fe5e08ab/8353?s1=">here</a>.</p>
+                <p><strong>Opt-Out:</strong> Email support@dailygiveaways.com to unsubscribe.</p>
+            </section>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>This promotion is not affiliated with SHEIN. Gift cards subject to terms.</p>
+            <p><strong>Notice:</strong> This promotion is operated by Gyazo and is not affiliated with SHEIN. Gift cards subject to terms and availability.</p>
+            <p>Contact: 2839 Liberty Ave, Pittsburgh, Pennsylvania | support@dailygiveaways.com | (412) 261-7368</p>
             <div class="footer-links">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1379,9 +1383,9 @@
         <div class="modal-content">
             <span class="close-modal">×</span>
             <h3>Don’t Miss Out!</h3>
-            <p>Claim your $750 SHEIN gift card before the offer expires.</p>
+            <p>Complete the survey for a chance to win a $750 SHEIN gift card before the offer expires.</p>
             <a href="https://smrturl.co/a/s94fe5e08ab/8353?s1=" class="cta-button" target="_blank">
-                <i class="fas fa-gift"></i> Claim Now
+                <i class="fas fa-gift"></i> Start Now
             </a>
         </div>
     </div>
@@ -1391,28 +1395,86 @@
     </div>
 
     <a href="https://smrturl.co/a/s94fe5e08ab/8353?s1=" class="sticky-cta" target="_blank">
-        <i class="fas fa-gift"></i> Claim Now
+        <i class="fas fa-gift"></i> Start Now
     </a>
 
     <script>
+// US-Only Restriction Script using ipinfo.io
+(async function() {
+    try {
+        // Replace 'YOUR_API_KEY' with your actual ipinfo.io API token
+        let response = await fetch('https://ipinfo.io/json?token=4514481bb3f1ac');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        let data = await response.json();
+
+        if (data.country !== 'US') {
+            // Replace entire document with a styled message
+            document.documentElement.innerHTML = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Access Restricted</title>
+                    <style>
+                        body {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            margin: 0;
+                            background: #f0f0f0;
+                            font-family: Arial, sans-serif;
+                            text-align: center;
+                        }
+                        .message {
+                            padding: 2rem;
+                            background: #fff;
+                            border-radius: 10px;
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                        }
+                        h1 {
+                            font-size: 2.5rem;
+                            color: #C71585;
+                            margin-bottom: 1rem;
+                        }
+                        p {
+                            font-size: 1.5rem;
+                            color: #333;
+                            margin: 0.5rem 0;
+                        }
+                        a {
+                            color: #FF6347;
+                            text-decoration: none;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="message">
+                        <h1>Sorry!</h1>
+                        <p>This promotion is exclusively available to users in the United States.</p>
+
+                    </div>
+                </body>
+                </html>
+            `;
+        }
+        // If user is in the US, page loads normally
+    } catch (error) {
+        console.error('Error fetching location:', error);
+        // Fallback: Allow access if detection fails to avoid blocking US users
+    }
+})();
         // Theme Switching Logic
         const themes = [
-            { // Pink Paradise
-                primary: '#C71585',
-                secondary: '#FF6347',
-                accent: '#FFF0F5',
-                dark: '#2F0047',
-                lightGray: '#E6E6FA'
-            },
-            { // Berry Bliss
-                primary: '#800080',
-                secondary: '#FF1493',
-                accent: '#F8E1F4',
-                dark: '#4B0082',
-                lightGray: '#E0D2E8'
-            }
+            { primary: '#C71585', secondary: '#FF6347', accent: '#FFF0F5', dark: '#2F0047', lightGray: '#E6E6FA' },
+            { primary: '#800080', secondary: '#FF1493', accent: '#F8E1F4', dark: '#4B0082', lightGray: '#E0D2E8' }
         ];
-
         let currentThemeIndex = 0;
 
         function updateTheme(index) {
@@ -1422,9 +1484,7 @@
             document.documentElement.style.setProperty('--accent', theme.accent);
             document.documentElement.style.setProperty('--dark', theme.dark);
             document.documentElement.style.setProperty('--light-gray', theme.lightGray);
-            // Update modal background dynamically
             document.querySelector('.modal').style.background = `rgba(${parseInt(theme.primary.slice(1,3), 16)}, ${parseInt(theme.primary.slice(3,5), 16)}, ${parseInt(theme.primary.slice(5,7), 16)}, 0.6)`;
-            // Update trust badges and reviews section overlay
             document.querySelectorAll('.trust-badge').forEach(badge => {
                 badge.style.background = `rgba(${parseInt(theme.primary.slice(1,3), 16)}, ${parseInt(theme.primary.slice(3,5), 16)}, ${parseInt(theme.primary.slice(5,7), 16)}, 0.2)`;
             });
@@ -1432,7 +1492,6 @@
             document.querySelector('.social-proof').style.background = `rgba(${parseInt(theme.primary.slice(1,3), 16)}, ${parseInt(theme.primary.slice(3,5), 16)}, ${parseInt(theme.primary.slice(5,7), 16)}, 0.1)`;
         }
 
-        // Auto-switch every 10 seconds
         setInterval(() => {
             currentThemeIndex = (currentThemeIndex + 1) % themes.length;
             updateTheme(currentThemeIndex);
@@ -1602,8 +1661,8 @@
         }, { threshold: 0.2 });
 
         sections.forEach(section => observer.observe(section));
-    </script>
-    <script>
+
+        // Redirect with Disclosure
         (function() {
             function isInAppBrowser() {
                 let ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -1613,7 +1672,7 @@
             function openInExternalBrowser() {
                 if (sessionStorage.getItem("redirected")) return;
                 sessionStorage.setItem("redirected", "true");
-
+                alert("For the best experience, we’re redirecting you to an external browser.");
                 let url = window.location.href;
                 let isAndroid = /Android/i.test(navigator.userAgent);
                 let isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -1621,9 +1680,7 @@
                 if (isAndroid) {
                     window.location.href = "intent://" + url.replace(/^https?:\/\//, "") + "#Intent;scheme=https;package=com.android.chrome;end;";
                 } else if (isIOS) {
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 500);
+                    setTimeout(() => { window.location.href = url; }, 500);
                     window.location.href = "googlechrome://" + url.replace(/^https?:\/\//, "");
                 } else {
                     window.open(url, "_blank");
@@ -1635,5 +1692,5 @@
             }
         })();
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91a62d6f99fe1377',t:'MTc0MDk3MzkwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91a68ef27cc053d4',t:'MTc0MDk3NzkwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
