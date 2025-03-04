@@ -1,0 +1,2 @@
+SHEIN Gift Card Promotion Page
+This is a responsive HTML/CSS/JavaScript landing page designed for a promotional campaign offering a chance to win a $750 SHEIN gift card. Operated by Gyazo, a third-party marketing firm, this promotion is not affiliated with SHEIN. The page features a survey-based entry process, a countdown timer, interactive elements, and a modern design optimized for user engagement.
